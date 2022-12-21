@@ -1,7 +1,9 @@
 # Password-Generator
-Java console application designed as a proof of concept for another project. **(Created and tested on windows 10 )**
+Java console application designed as a proof of concept for another project. **(Created and tested on windows 10. Needs java-19 installed)**
 
 Users can generate passwords from a list of available options.
+
+It is possible to create a list of excluded characters which will not be selected when the password is created. For example, the user might exclude the characters " ilL1| " or "0Oo" because they look similar to each other. Only 1 group of characters can be excluded up to as many as you want. If you don't want to exclude any character then siply, press "enter" when the program asks you to
 
 <details>
   <summary>Available options</summary>
@@ -16,7 +18,7 @@ Users can generate passwords from a list of available options.
   
 </details>
 
-Updates might be done in the future. The program does not support two or more options at this time
+Updates will be done in the near future. The program does not support two or more options at this time
 
 ### How to use
 
