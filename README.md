@@ -11,8 +11,8 @@ It is possible to create a list of excluded characters which will not be selecte
   #### Options
   * Digits
   * All characters
-  * Small characters
-  * Capital characters
+  * Lowercase characters
+  * Uppercase characters
   * Symbols
   * All of the above
   
