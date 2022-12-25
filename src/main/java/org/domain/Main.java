@@ -1,13 +1,11 @@
 package org.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<String> excludedCharacters = new ArrayList<>();
+        Set<String> excludedCharacters = new HashSet<>();
         PasswordTypes passwordType = PasswordTypes.ALL;
         Scanner scanner = new Scanner(System.in);
         String userInput;
@@ -52,12 +50,12 @@ public class Main {
                     passwordType = PasswordTypes.CHARACTERS;
                     break;
                 case "3":
-                case "CHARACTERS_SMALL":
-                    passwordType = PasswordTypes.CHARACTERS_SMALL;
+                case "CHARACTERS_LOWERCASE":
+                    passwordType = PasswordTypes.CHARACTERS_LOWERCASE;
                     break;
                 case "4":
-                case "CHARACTERS_CAPITAL":
-                    passwordType = PasswordTypes.CHARACTERS_CAPITAL;
+                case "CHARACTERS_UPPERCASE":
+                    passwordType = PasswordTypes.CHARACTERS_UPPERCASE;
                     break;
                 case "5":
                 case "SYMBOLS":
@@ -65,15 +63,13 @@ public class Main {
                     break;
                 case "6":
                 case "ALL":
+                default:
                     passwordType = PasswordTypes.ALL;
                     break;
 
                 case "7":
                 case "EDIT EXCLUDED CHARACTERS":
                     excludedCharacters = EditExcludedCharacters();
-                    break;
-                default:
-                    passwordType = PasswordTypes.ALL;
                     break;
             }
 
@@ -102,8 +98,8 @@ public class Main {
         System.out.println("Password type:" + "                      |");
         System.out.println("1. DIGITS" + "                           |");
         System.out.println("2. CHARACTERS_ALL" + "                   |");
-        System.out.println("3. CHARACTERS_SMALL" + "                 |");
-        System.out.println("4. CHARACTERS_CAPITAL" + "               |");
+        System.out.println("3. CHARACTERS_LOWERCASE" + "             |");
+        System.out.println("4. CHARACTERS_UPPERCASE" + "             |");
         System.out.println("5. SYMBOLS" + "                          |");
         System.out.println("6. ALL" + "                              |");
         System.out.println("- - - - - - - - - - - - - - - - - - -");
@@ -112,17 +108,17 @@ public class Main {
         System.out.println("- - - - - - - - - - - - - - - - - - -");
     }
 
-    private static List<String> EditExcludedCharacters() {
-        List<String> excludedCharacters = new ArrayList<>();
+    private static Set<String> EditExcludedCharacters() {
+        Set<String> excludedCharacters = new HashSet<>();
         String userInput;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter excluded characters. Separate by comma or spaces for clarity");
+        System.out.println("Enter excluded characters. Separate by spaces for clarity");
         userInput = scanner.nextLine();
 
         for (int i = 0; i < userInput.length(); i++) {
             char characterRead = userInput.charAt(i);
-            if (characterRead != ',' && characterRead != ' ') {
+            if (characterRead != ' ') {
                 excludedCharacters.add(Character.toString(characterRead));
             }
         }
