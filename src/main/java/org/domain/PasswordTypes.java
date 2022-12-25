@@ -3,8 +3,8 @@ package org.domain;
 public enum PasswordTypes {
     DIGITS,
     CHARACTERS,
-    CHARACTERS_SMALL,
-    CHARACTERS_CAPITAL,
+    CHARACTERS_LOWERCASE,
+    CHARACTERS_UPPERCASE,
     SYMBOLS,
     ALL
 }
